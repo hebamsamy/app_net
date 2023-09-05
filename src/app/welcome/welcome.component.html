@@ -1,0 +1,25 @@
+<h1 class="color" [title]="id">Welcome To our WebSite {{name}}</h1>
+
+<img [src]="profilePic" alt="">
+<img [src]="profilefile" alt="">
+<br>
+<button class="temp"  (click)="change()">Change</button>
+
+<hr>
+<hr>
+<hr>
+<hr>
+<label for="">User Name</label>
+<input  class="form-control" type="text" [(ngModel)]="name" >
+<br>
+<label for="">User pictur URl</label>
+<input  class="form-control" type="text" [(ngModel)]="profilePic" >
+<br>
+<label for="">User Picture file</label>
+<input  class="form-control" type="file" #pic (change)="getfile(pic)"  [(ngModel)]="profilefile" >
+
+
+
+<hr>
+
+<input type="email" name="email" id="eeeemail" #test (keyup)="testtemp(test)">
