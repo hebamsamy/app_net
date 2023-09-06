@@ -1,13 +1,12 @@
-import { Component } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Product } from '../models/product';
 
-@Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
-})
-export class ProductListComponent {
-  date = new Date();
-  Products:Array<any>= [
+@Injectable()
+export class ProductService {
+
+  constructor() { }
+
+  Products:Array<Product>= [
     {
         id: 1,
         name: "Lenvo thinpad X230",
