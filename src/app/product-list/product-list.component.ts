@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  date = new Data();
+  date = new Date();
   Products:Array<any>= [
     {
         id: 1,

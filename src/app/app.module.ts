@@ -6,13 +6,15 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { FormsModule } from '@angular/forms';
 import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { MaxLengthPipe } from './pipes/max-length.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     ProductComponent,
-    ProductListComponent
+    ProductListComponent,
+    MaxLengthPipe
   ],
   imports: [
     BrowserModule,
