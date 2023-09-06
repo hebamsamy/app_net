@@ -1,0 +1,23 @@
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+  selector: 'app-product-details',
+  templateUrl: './product-details.component.html',
+  styleUrls: ['./product-details.component.css']
+})
+export class ProductDetailsComponent implements OnInit {
+
+  constructor(private ActiveRoute:ActivatedRoute){
+// console.log(this.ActiveRoute)
+    this.ActiveRoute.params.subscribe({
+      next:(prams)=>{
+        console.log(prams)
+      }
+    })
+  }
+
+  ngOnInit() {
+  }
+
+}

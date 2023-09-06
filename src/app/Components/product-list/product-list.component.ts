@@ -1,4 +1,5 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
+import { ICategory } from 'src/app/models/icatergory';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -16,6 +17,10 @@ export class ProductListComponent implements OnInit, OnChanges {
   ngOnChanges(){
     console.log('ngOnChanges')
   }
+  Products :Product[];
+  category: ICategory[];
+  selectedCat:number=0;
+  date = new Date();
 
   constructor(
     private ProdServ:ProductService
@@ -23,9 +28,13 @@ export class ProductListComponent implements OnInit, OnChanges {
     // initilzation for data (props)
     console.log('constructor')
     this.Products = this.ProdServ.Products
+    this.category = this.ProdServ.Categories
 
   }
-  Products :Product[];
-  date = new Date();
+
+  changeCat(){
+  this.Products = this.ProdServ.filterByCategoryID(this.selectedCat)
+  }
+ 
 
 }

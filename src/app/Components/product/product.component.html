@@ -1,9 +1,13 @@
-<div [ngClass]="{'bg-danger':product.quantity==1}" [ngStyle]="{'font-size': product.quantity==1 ? '20px':'25px', 'font-weight': product.quantity==1 ? 'bold':'light'}">
-    <img [src]="product.imgURL" class="img-fluid" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">{{product.name | maxLength : 10}}</h5>
-        <p class="card-text" >{{product.price | currency :'L.E.'}}</p>
-        <a href="#" class="btn btn-primary" *ngIf="product.quantity > 3">Add to cart</a>
-        <a href="#" class="btn btn-warning" *ngIf="product.quantity <= 3">Last product in Stock Buy it now</a>
+<a class="btn" [routerLink]="['/user/details',product.id, product.name]">
+
+    <div [ngClass]="{'bg-danger':product.quantity==1}" [ngStyle]="{'font-size': product.quantity==1 ? '20px':'25px', 'font-weight': product.quantity==1 ? 'bold':'light'}">
+        <img [src]="product.imgURL" class="img-fluid" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{product.name | maxLength : 10}}</h5>
+            <p class="card-text" >{{product.price | currency :'L.E.'}}</p>
+            <a href="#" class="btn btn-primary" *ngIf="product.quantity > 3">Add to cart</a>
+            <a href="#" class="btn btn-warning" *ngIf="product.quantity <= 3">Last product in Stock Buy it now</a>
+        </div>
     </div>
-</div>
+</a>
+

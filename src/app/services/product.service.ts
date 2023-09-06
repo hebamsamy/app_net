@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
+import { ICategory } from '../models/icatergory';
 
 @Injectable()
 export class ProductService {
@@ -96,4 +97,36 @@ export class ProductService {
         id: 11
     }
 ]
+Categories:Array<ICategory> =[
+    {
+      id: 0,
+      name: "All",
+      desciption: "This is description"
+    },
+    {
+      id: 1,
+      name: "Laptops",
+      desciption: "This is description"
+    },
+    {
+      id: 2,
+      name: "Tablets",
+      desciption: "This is description"
+    },
+    {
+      id: 3,
+      name: "Mobiles",
+      desciption: "This is description"
+    },
+    {
+      id: 4,
+      name: "Accessories",
+      desciption: "This is description"
+    }
+  ]
+
+  filterByCategoryID(id:number):Product[]{
+    if (id==0) return this.Products;
+    else return this.Products.filter(p=>p.categoryID == id);
+  }
 }

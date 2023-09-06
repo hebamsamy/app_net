@@ -4,6 +4,12 @@
 <div class="container">
     <h1>Our WebSite Products</h1>
     <h1>Date Now  {{date|date :'YYYY-MM-dd'}}</h1>
+    <h3>
+        Select Category :
+    </h3>  
+    <select [(ngModel)]="selectedCat" (change)="changeCat()">
+        <option [value]="item.id" *ngFor="let item of category">{{item.name}}</option>
+    </select>
     <div class="row">
         <app-product class="card col-4" *ngFor="let item of Products" [product]="item"></app-product>
     </div>
